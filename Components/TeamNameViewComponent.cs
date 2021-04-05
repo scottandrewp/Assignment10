@@ -19,6 +19,7 @@ namespace Assignment10.Components
 
         public IViewComponentResult Invoke()
         {
+            //this allows me to send the selected team name to the Index View
             ViewBag.SelectedTeam = RouteData?.Values["team"];
 
             return View(context.Teams

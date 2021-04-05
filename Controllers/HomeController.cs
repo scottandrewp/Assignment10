@@ -28,7 +28,7 @@ namespace Assignment10.Controllers
 
             return View(new IndexViewModel
             {
-
+                //this is where I filter the bowlers
                 Bowlers = (context.Bowlers
                     .Where(x => x.TeamId == team || team == null)
                     .OrderBy(x => x)
@@ -36,6 +36,8 @@ namespace Assignment10.Controllers
                     .Take(bowlersPerPage)
                     .ToList()),
 
+
+                //This calculates the number of pages I need
                 PageNumberingInfo = new PageNumberingInfo
                 {
                     NumItemsPerPage = bowlersPerPage,
@@ -44,7 +46,7 @@ namespace Assignment10.Controllers
                     TotalNumItems = (team == null ? context.Bowlers.Count() :
                         context.Bowlers.Where(x => x.TeamId == team).Count())
                 },
-
+                //this is the team name
                 TeamName = teamName
             });
         

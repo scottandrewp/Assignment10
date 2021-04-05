@@ -48,6 +48,7 @@ namespace Assignment10.Infrastructure
                 individualTag.Attributes["href"] = urlHelper.Action(PageAction, KeyValuePairs);
                 individualTag.InnerHtml.AppendHtml(i.ToString());
 
+                // this builds the css tag helpers for me
                 if (PageClassesEnabled)
                 {
                     individualTag.AddCssClass(PageClass);
